@@ -5,7 +5,7 @@ from typing import Any, Dict, List, Optional
 
 import logging
 
-from haystack.preview.document_stores.decorator import store
+from haystack.preview.document_stores.decorator import document_store
 from haystack.preview.dataclasses import Document
 from haystack.preview.document_stores.protocols import DuplicatePolicy
 from haystack.preview.document_stores.errors import DuplicateDocumentError, MissingDocumentError
@@ -13,7 +13,7 @@ from haystack.preview.document_stores.errors import DuplicateDocumentError, Miss
 logger = logging.getLogger(__name__)
 
 
-@store
+@document_store
 class ExampleDocumentStore:  # FIXME
     """
     Except for the __init__(), signatures of any other method in this class must not change.
