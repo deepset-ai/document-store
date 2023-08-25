@@ -1,7 +1,7 @@
 # SPDX-FileCopyrightText: 2023-present John Doe <jd@example.com>
 #
 # SPDX-License-Identifier: Apache-2.0
-from typing import Dict, Any, Optional
+from typing import Any, Dict, Optional
 
 from haystack.preview import component
 
@@ -29,7 +29,7 @@ class ExampleRetriever:
         self.top_k = top_k
         self.document_store = document_store
 
-    def run(self, data):
+    def run(self, _):
         """
         Run the Retriever on the given input data.
 

@@ -1,14 +1,13 @@
 # SPDX-FileCopyrightText: 2023-present John Doe <jd@example.com>
 #
 # SPDX-License-Identifier: Apache-2.0
+import logging
 from typing import Any, Dict, List, Optional
 
-import logging
-
-from haystack.preview.document_stores.decorator import document_store
 from haystack.preview.dataclasses import Document
-from haystack.preview.document_stores.protocols import DuplicatePolicy
+from haystack.preview.document_stores.decorator import document_store
 from haystack.preview.document_stores.errors import DuplicateDocumentError, MissingDocumentError
+from haystack.preview.document_stores.protocols import DuplicatePolicy
 
 logger = logging.getLogger(__name__)
 
@@ -33,7 +32,7 @@ class ExampleDocumentStore:  # FIXME
         """
         return 0  # FIXME
 
-    def filter_documents(self, filters: Optional[Dict[str, Any]] = None) -> List[Document]:
+    def filter_documents(self, _: Optional[Dict[str, Any]] = None) -> List[Document]:
         """
         Returns the documents that match the filters provided.
 
@@ -131,4 +130,5 @@ class ExampleDocumentStore:  # FIXME
         :param object_ids: the object_ids to delete
         """
         for doc_id in document_ids:  # FIXME
-            raise MissingDocumentError(f"ID '{doc_id}' not found, cannot delete it.")
+            msg = f"ID '{doc_id}' not found, cannot delete it."
+            raise MissingDocumentError(msg)
