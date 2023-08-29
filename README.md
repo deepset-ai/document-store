@@ -1,3 +1,5 @@
+[![test](https://github.com/deepset-ai/document-store/actions/workflows/test.yml/badge.svg)](https://github.com/deepset-ai/document-store/actions/workflows/test.yml)
+
 # Example Store
 
 This Github repository is a template that can be used to create custom document stores to extend
