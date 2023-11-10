@@ -27,6 +27,7 @@ classifiers = [
 dependencies = [
   # we distribute the preview version of Haystack 2.0 under the package "haystack-ai"
   "haystack-ai",
+  "typing_extensions",
 ]
 
 [project.urls]
