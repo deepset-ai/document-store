@@ -60,7 +60,7 @@ cmd [1] | coverage run -m pytest tests
 
 ## Build
 
-To build the package you can use `hatc`:
+To build the package you can use `hatch`:
 
 ```console
 ~$ hatch build
