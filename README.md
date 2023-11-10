@@ -36,6 +36,27 @@ When your custom document store is ready and working, feel free to add it to the
 [this repo](https://github.com/deepset-ai/haystack-integrations).
 
 
+## Testing
+
+You can use `hatch` to run the linters:
+
+```console
+~$ hatch run lint:all
+cmd [1] | ruff .
+cmd [2] | black --check --diff .
+All done! ✨ 🍰 ✨
+6 files would be left unchanged.
+cmd [3] | mypy --install-types --non-interactive src/example_store tests
+Success: no issues found in 6 source files
+```
+
+Similar for running the tests:
+
+```console
+~$ hatch run cov
+cmd [1] | coverage run -m pytest tests
+...
+```
 ## License
 
 `example-store` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
