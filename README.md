@@ -36,7 +36,7 @@ When your custom document store is ready and working, feel free to add it to the
 [this repo](https://github.com/deepset-ai/haystack-integrations).
 
 
-## Testing
+## Test
 
 You can use `hatch` to run the linters:
 
@@ -57,6 +57,27 @@ Similar for running the tests:
 cmd [1] | coverage run -m pytest tests
 ...
 ```
+
+## Build
+
+To build the package you can use `hatc`:
+
+```console
+~$ hatch build
+[sdist]
+dist/example_store-0.0.1.tar.gz
+
+[wheel]
+dist/example_store-0.0.1-py3-none-any.whl
+```
+
+## Release
+
+To automatically build and push the package to PyPI, you need to set a repository secret called `PYPI_API_TOKEN`
+containing a valid token for your PyPI account.
+Then set the desired version number in `src/example_store/__about__.py` and tag the commit using the format
+`vX.Y.Z`. After pushing the tag, a Github workflow will start and take care of building and releasing the package.
+
 ## License
 
 `example-store` is distributed under the terms of the [Apache-2.0](https://spdx.org/licenses/Apache-2.0.html) license.
