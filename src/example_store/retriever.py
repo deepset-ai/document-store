@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: Apache-2.0
 from typing import Any, Dict, Optional
 
-from haystack.preview import component
+from haystack import component
 
 from example_store import ExampleDocumentStore
 

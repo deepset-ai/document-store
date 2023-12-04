@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 import pytest
-from haystack.preview.testing.document_store import DocumentStoreBaseTests
+from haystack.testing.document_store import DocumentStoreBaseTests
 
 from example_store.document_store import ExampleDocumentStore
 

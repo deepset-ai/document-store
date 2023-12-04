@@ -4,15 +4,13 @@
 import logging
 from typing import Any, Dict, List, Optional
 
-from haystack.preview.dataclasses import Document
-from haystack.preview.document_stores.decorator import document_store
-from haystack.preview.document_stores.errors import DuplicateDocumentError, MissingDocumentError
-from haystack.preview.document_stores.protocols import DuplicatePolicy
+from haystack.dataclasses import Document
+from haystack.document_stores.errors import DuplicateDocumentError, MissingDocumentError
+from haystack.document_stores.protocols import DuplicatePolicy
 
 logger = logging.getLogger(__name__)
 
 
-@document_store
 class ExampleDocumentStore:  # FIXME
     """
     Except for the __init__(), signatures of any other method in this class must not change.
@@ -116,6 +114,7 @@ class ExampleDocumentStore:  # FIXME
         for _ in documents:  # FIXME
             if policy == DuplicatePolicy.FAIL:
                 raise DuplicateDocumentError
+        return 0
 
     def delete_documents(self, document_ids: List[str]) -> None:
         """
