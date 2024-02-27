@@ -4,7 +4,7 @@
 import logging
 from typing import Any, Dict, List, Optional
 
-from haystack.dataclasses import Document
+from haystack import Document, default_from_dict, default_to_dict
 from haystack.document_stores.errors import DuplicateDocumentError, MissingDocumentError
 from haystack.document_stores.protocols import DuplicatePolicy
 
@@ -126,3 +126,22 @@ class ExampleDocumentStore:  # FIXME
         for doc_id in document_ids:  # FIXME
             msg = f"ID '{doc_id}' not found, cannot delete it."
             raise MissingDocumentError(msg)
+
+    def to_dict(self) -> Dict[str, Any]:
+        """
+        Serializes this store to a dictionary. You can customise here what goes into the
+        final serialized format.
+        """
+        data = default_to_dict(
+            self,
+            example_param=self.example_param,
+        )
+        return data
+
+    @classmethod
+    def from_dict(cls, data: Dict[str, Any]) -> "ExampleDocumentStore":
+        """
+        Deserializes the store from a dictionary, if you customised anything in `to_dict`,
+        you can changed it back here.
+        """
+        return default_from_dict(cls, data)
