@@ -6,7 +6,7 @@ from typing import Any, Dict, List, Optional
 
 from haystack import Document, default_from_dict, default_to_dict
 from haystack.document_stores.errors import DuplicateDocumentError, MissingDocumentError
-from haystack.document_stores.protocols import DuplicatePolicy
+from haystack.document_stores.types import DuplicatePolicy
 
 logger = logging.getLogger(__name__)
 
