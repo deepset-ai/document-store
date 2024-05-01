@@ -5,9 +5,6 @@
 This Github repository is a template that can be used to create custom document stores to extend
 the new [Haystack](https://github.com/deepset-ai/haystack/) API available from version 2.0.
 
-While the new API is still under active development, the new "Store" architecture is quite stable
-and we are encouraging early adopters to contribute their custom document stores.
-
 ## Template features
 
 By creating a new repo using this template, you'll get the following advantages:
