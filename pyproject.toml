@@ -34,8 +34,11 @@ Documentation = "https://github.com/unknown/example-store#readme"
 Issues = "https://github.com/unknown/example-store/issues"
 Source = "https://github.com/unknown/example-store"
 
+[tool.hatch.build.targets.wheel]
+packages = ["src/haystack_integrations"]
+
 [tool.hatch.version]
-path = "src/example_store/__about__.py"
+path = "src/haystack_integrations/document_stores/example_store/__about__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
@@ -65,7 +68,7 @@ dependencies = [
   "ruff>=0.0.243",
 ]
 [tool.hatch.envs.lint.scripts]
-typing = "mypy --install-types --non-interactive {args:src/example_store tests}"
+typing = "mypy --install-types --non-interactive --explicit-package-bases {args:src/haystack_integrations}"
 style = [
   "ruff check {args:.}",
   "black --check --diff {args:.}",

@@ -4,8 +4,7 @@
 from typing import Any, Dict, Optional
 
 from haystack import component
-
-from example_store import ExampleDocumentStore
+from haystack_integrations.document_stores.example_store import ExampleDocumentStore
 
 
 @component
