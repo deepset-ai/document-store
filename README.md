@@ -21,7 +21,7 @@ By creating a new repo using this template, you'll get the following advantages:
    where `technology` can be for example the name of a vector database you're integrating.
 3. Rename the package `src/example_store` to something more meaningful and adjust the Python
    import statements.
-4. Edit `pyproject.toml` and replace any occurrence of `example_store` and `example-store` according
+4. Replace any occurrence of `example_store` and `example-store` across the repo, according
    to the name you chose in the previous steps.
 5. Search the whole codebase for the string `#FIXME`, that's where you're supposed to change or add
    code specific for the database you're integrating.
